@@ -6,6 +6,7 @@ import events from './javascripts/events/events';
 const init = () => {
   firebase.initializeApp(apiKeys.config);
   events.loginClick();
+  events.logoutClick();
 };
 
 init();
