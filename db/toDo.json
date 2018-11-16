@@ -1,0 +1,26 @@
+ { 
+  "task1": {
+    "task": "Walk the dog",
+    "isCompleted": false
+  },
+  "task2": {
+    "task": "Walk the cat",
+    "isCompleted": false
+  },
+  "task3": {
+    "task": "Walk the bird",
+    "isCompleted": false
+  },
+  "task4": {
+    "task": "Walk the lizard",
+    "isCompleted": false
+  },
+  "task5": {
+    "task": "Walk the mom",
+    "isCompleted": false
+  },
+  "task6": {
+    "task": "Walk the picture",
+    "isCompleted": true
+  }
+}
