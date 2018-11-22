@@ -6,7 +6,7 @@ const buildToDo = (tasks) => {
   $.each(tasks, (i, objective) => {
     domString += `
     <div id="${objective.id}">
-      <p>${objective.task}</p>
+      <p><strong>${objective.task}</strong></p>
       <p>${objective.isCompleted ? 'Task is complete' : 'Needs to be completed'}</p>
     </div>`;
   });

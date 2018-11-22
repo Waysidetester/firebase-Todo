@@ -1,12 +1,13 @@
 import firebase from 'firebase/app';
 import apiKeys from '../db/apiKeys.json';
 import './index.scss';
-import events from './javascripts/events/authEvents';
+import authEvents from './javascripts/events/authEvents';
+import addTaskEvents from './javascripts/events/addTaskEvent';
 
 const init = () => {
   firebase.initializeApp(apiKeys.config);
-  events.loginClick();
-  events.logoutClick();
+  authEvents.initEvents();
+  addTaskEvents.createForm();
 };
 
 init();

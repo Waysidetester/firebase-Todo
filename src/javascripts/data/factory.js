@@ -11,4 +11,6 @@ const toDoData = () => new Promise((resolve, reject) => {
     });
 });
 
-export default { toDoData };
+const addToDoData = newTask => axios.post(`${apiKeys.config.databaseURL}/tasks.json`, JSON.stringify(newTask));
+
+export default { toDoData, addToDoData };

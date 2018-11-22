@@ -7,7 +7,6 @@ import 'firebase/auth';
 
 const loginClick = () => {
   $('#login').on('click', auth.googleAuth);
-  $('#login').on('click', displayToDo.displayToDo);
 };
 
 const logoutClick = () => {
@@ -17,11 +16,19 @@ const logoutClick = () => {
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log('hello');
+      $('#add-task').show();
+      displayToDo.displayToDo();
     } else {
-      console.log('user not logged in');
+      $('#add-task').hide();
+      $('#to-do').html('');
     }
   });
 };
 
-export default { loginClick, logoutClick, checkLoginStatus };
+const initEvents = () => {
+  loginClick();
+  logoutClick();
+  checkLoginStatus();
+};
+
+export default { initEvents };
