@@ -31,4 +31,4 @@ const initEvents = () => {
   checkLoginStatus();
 };
 
-export default { initEvents };
+export default { initEvents, checkLoginStatus };
