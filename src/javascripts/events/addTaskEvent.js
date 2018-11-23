@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import createTask from '../components/toDo/createTask';
 import factory from '../data/factory';
 import authEvents from './authEvents';
 
@@ -7,7 +6,7 @@ const addTask = () => {
   $('#save-task').on('click', () => {
     const newTask = {
       task: $('#form-task').val(),
-      isCompleted: $('#completed').checked,
+      isCompleted: $('#completed').prop('checked'),
     };
     factory.addToDoData(newTask);
     $('#form-entry').hide();
@@ -18,11 +17,11 @@ const addTask = () => {
   });
 };
 
-const createForm = () => {
-  $('#add-task').on('click', () => {
+const createForm = (typeOfForm, buttonId) => {
+  $(buttonId).on('click', () => {
     $('#authentication').hide();
     $('#to-do').hide();
-    createTask.buildAddTask();
+    typeOfForm();
     $('#form-entry').show();
     addTask();
   });

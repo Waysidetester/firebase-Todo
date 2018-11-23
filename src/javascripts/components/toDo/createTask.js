@@ -7,7 +7,7 @@ const formBuilder = (object) => {
     <input type="text" class="form-control" value="${object.task}" id="form-task" placeholder="Task to Complete">
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="completed" checked="${object.isCompleted ? 'true' : 'false'}">
+    <input type="checkbox" class="form-check-input" id="completed">
     <label class="form-check-label" for="completed">Complete?</label>
   </div>
   `;
@@ -18,7 +18,7 @@ const buildAddTask = () => {
   const emptyTask = {
     id: '',
     task: '',
-    isCompleted: true,
+    isCompleted: false,
   };
   let newString = '<h2>Add a Task</h2>';
   newString += formBuilder(emptyTask);
@@ -26,4 +26,11 @@ const buildAddTask = () => {
   $('#form-entry').html(newString);
 };
 
-export default { buildAddTask };
+const buildEditTask = (selectedTask) => {
+  let newString = '<h2>Edit Task</h2>';
+  newString += formBuilder(selectedTask);
+  newString += '<button class="btn btn-success" id="update-task">Update Task</button>';
+  $('#form-entry').html(newString);
+};
+
+export default { buildAddTask, buildEditTask };
