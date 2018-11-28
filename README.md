@@ -18,7 +18,7 @@ This project was intended to make calls to a real time database and display the 
     * Input the value of each key
     * Rename the file `apiKeys.json`
 1. You will need to create a realtime database in Firebase and start in test mode ![init database](./images/realtimeDatabase.PNG)
-1. Import the `toDo.json` file into the database for seed data. ![select import](./images/import-option.PNG) ![select import](./images/import-json.PNG)
+1. Import the `./db/toDo.json` file into the database for seed data. ![select import](./images/import-option.PNG) ![select import](./images/import-json.PNG)
 
 1. run the following command in your terminal to initiate the app: ```npm start```
 This should automatically open a new tab in your default browser and run the web app, which pulls data from the Firebase app you have created.
