@@ -13,29 +13,26 @@ const buildToDo = (tasks) => {
       domString += `
       <div id="${objective.id}">
         <p><strong>${objective.task}</strong></p>
-        <p>
-          Needs to be completed
-            <span>
-              <button class="btn btn-warning edit-button" data-edit-id=${objective.id}>
-                <img class="trash-icon" src="${pencilIcon}" alt="edit" />
-              </button>
-              <button class="btn btn-danger delete-button" data-delete-id=${objective.id}>
-                <img class="trash-icon" src="${garbageIcon}" alt="delete" />
-              </button>
-            </span>
-        </p>
+        <p class="current-task">Needs to be completed</p>
+          <span>
+            <button class="btn btn-warning edit-button" data-edit-id=${objective.id}>
+              <img class="trash-icon" src="${pencilIcon}" alt="edit" />
+            </button>
+            <button class="btn btn-danger delete-button" data-delete-id=${objective.id}>
+              <img class="trash-icon" src="${garbageIcon}" alt="delete" />
+            </button>
+          </span>
       </div>`;
     } else {
       newString += `
       <div id="${objective.id}">
         <p><strong>${objective.task}</strong></p>
-        <p>Task is complete
-          <span>
-            <button class="btn btn-danger delete-button" data-delete-id=${objective.id}>
-              <img class="trash-icon" src="${garbageIcon}" alt="delete" />
-            </button>
-          </span>
-        </p>
+        <p>Task is complete</p>
+        <span>
+          <button class="btn btn-danger delete-button" data-delete-id=${objective.id}>
+            <img class="trash-icon" src="${garbageIcon}" alt="delete" />
+          </button>
+        </span>
       </div>`;
     }
   });

@@ -26,11 +26,5 @@ const buildAddTask = () => {
   $('#form-entry').html(newString);
 };
 
-const buildEditTask = (selectedTask) => {
-  let newString = '<h2>Edit Task</h2>';
-  newString += formBuilder(selectedTask);
-  newString += '<button class="btn btn-success" id="update-task">Update Task</button>';
-  $('#form-entry').html(newString);
-};
 
-export default { buildAddTask, buildEditTask };
+export default { buildAddTask };

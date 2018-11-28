@@ -1,13 +1,20 @@
 import $ from 'jquery';
 import factory from '../data/factory';
 import displayToDo from '../components/toDo/displayToDo';
-import createTask from '../components/toDo/createTask';
+// import editTask from '../components/toDo/editTask';
+
+const displayEditInput = (currentTask, divId) => {
+  const domString = `<input id="edit-task-input" type="text" value="${currentTask.task}"/>
+  <input id="edit-task-complete" type="checkbox" ${currentTask.isCompleted ? 'checked' : ''}/>
+  <button id="update-task" class="btn btn-warning">Edit</button>`;
+  $(`#${divId}`).html(domString);
+};
 
 const updateTask = (editTaskId) => {
   $('#update-task').on('click', () => {
     const newTask = {
-      task: $('#form-task').val(),
-      isCompleted: $('#completed').prop('checked'),
+      task: $('#edit-task-input').val(),
+      isCompleted: $('#edit-task-complete').prop('checked'),
     };
     factory.editToDoData(editTaskId, newTask)
       .then(() => {
@@ -16,10 +23,6 @@ const updateTask = (editTaskId) => {
       .catch((error) => {
         console.error(error);
       });
-    $('#form-entry').hide();
-    $('#form-entry').html('');
-    $('#authentication').show();
-    $('#to-do').show();
   });
 };
 
@@ -28,10 +31,7 @@ const editTaskEvent = () => {
     const taskToEdit = e.currentTarget.dataset.editId;
     factory.getSingleToDo(taskToEdit)
       .then((task) => {
-        $('#authentication').hide();
-        $('#to-do').hide();
-        createTask.buildEditTask(task);
-        $('#form-entry').show();
+        displayEditInput(task, taskToEdit);
         updateTask(taskToEdit);
       })
       .catch((error) => {
@@ -40,4 +40,4 @@ const editTaskEvent = () => {
   });
 };
 
-export default { editTaskEvent };
+export default { editTaskEvent, updateTask };
