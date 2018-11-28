@@ -1,7 +1,9 @@
 # firebase-Todo
 
+![webpage](./images/webpage.PNG)
+
 ## Purpose
-This was all about calling json data asynchronously and saving modular selections to an array/object. This will later use a `POST` method when serving it to a database. I also implement SASS into this project.
+This project was intended to make calls to a real time database and display the data that was returned. The big demonstration is using an API key to access the database. That key, when used with `get`, `post`, `delete`, and `put`, and access, add, delete, and edit the stored json data hosted on a separate network. The app is the epitome of front end developer functionality. The DOM is traversed to display and return data to and from a database.
 
 ## To View
 
@@ -23,4 +25,4 @@ This should automatically open a new tab in your default browser and run the web
 
 ## Notes
 
-This uses SASS for styling. The only major note about it's use is that there is no special funcitonality. In other words, this could have been coded in a large css file. Future projects should see a heavier implementation of scss variables, nesting, etc.
+This project lacks extensive styling. Simple Bootstrap classes as well as a few standard css properties are used to make the page barley viewable. Feel free to browse some of my other projects that include styling to please your eyes.
